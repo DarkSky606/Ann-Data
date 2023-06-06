@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".homepage">
+    <LinearLayout
+        android:id="@+id/l1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/i1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="5dp"
+            android:background="@color/trans"
+            android:src="@drawable/logo12"></ImageView>
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="20dp"
+            android:background="@color/trans"
+            android:fontFamily="sans-serif-smallcaps"
+            android:paddingBottom="2dp"
+            android:text="@string/name"
+            android:textColor="@color/black"
+            android:textSize="45sp"
+            android:textStyle="bold"
+            android:visibility="visible"></TextView>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/prof"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="25dp"
+            android:background="@color/trans"
+            android:tooltipText="User"
+            android:visibility="visible"
+            app:civ_border_color="@color/black"
+            app:civ_border_width="1dp" />
+
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/image_slider"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:outlineSpotShadowColor="#0B8EF7"
+                app:cardElevation="30dp">
+
+                <com.denzcoskun.imageslider.ImageSlider
+                    android:id="@+id/img_slider"
+                    android:layout_width="wrap_content"
+                    android:layout_height="205dp"
+                    app:iss_auto_cycle="true"
+                    app:iss_delay="2000"
+
+                    app:iss_error_image="@drawable/logo12"
+                    app:iss_period="2000"
+                    app:iss_selected_dot="@drawable/default_selected_dot"
+                    app:iss_unselected_dot="@drawable/default_unselected_dot" />
+
+            </androidx.cardview.widget.CardView>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/image_slider"
+                android:background="@color/trans"
+                android:columnCount="2">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv1"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"
+                    android:outlineSpotShadowColor="#610A95"
+                    app:cardCornerRadius="30dp"
+                    app:cardElevation="90dp"
+                    app:cardPreventCornerOverlap="true">
+
+                    <ImageView
+                        android:id="@+id/donate"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/donate" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="110dp"
+                        android:fontFamily="@font/ramaraja"
+                        android:text="Donate "
+                        android:textColor="@color/black"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv2"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="15dp"
+                    android:clickable="true"
+                    android:outlineSpotShadowColor="#610A95"
+                    app:cardCornerRadius="30dp"
+                    app:cardElevation="90dp">
+
+                    <ImageView
+                        android:id="@+id/receive"
+                        android:layout_width="65dp"
+                        android:layout_height="98dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/recieve" />
+
+                    <TextView
+                        android:id="@+id/rec"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="110dp"
+                        android:fontFamily="@font/ramaraja"
+                        android:text="Receive "
+                        android:textColor="@color/black"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv4"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="15dp"
+                    android:clickable="true"
+                    app:cardCornerRadius="30dp"
+                    android:outlineSpotShadowColor="#0B8EF7"
+                    app:cardElevation="90dp">
+
+                    <ImageView
+                        android:id="@+id/controbution"
+                        android:layout_width="81dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/contribution" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="110dp"
+                        android:fontFamily="@font/ramaraja"
+                        android:text="My Contribution "
+                        android:textColor="@color/black"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv5"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="15dp"
+                    app:cardCornerRadius="30dp"
+                    android:outlineSpotShadowColor="#0B8EF7"
+                    app:cardElevation="90dp">
+
+                    <ImageView
+                        android:id="@+id/partners"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/partners" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="55dp"
+                        android:fontFamily="@font/ramaraja"
+                        android:gravity="center_vertical"
+                        android:text=" Our Partners "
+                        android:textColor="@color/black"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/bp"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="15dp"
+                    android:clickable="true"
+                    android:layout_marginBottom="20dp"
+                    app:cardCornerRadius="30dp"
+                    android:outlineSpotShadowColor="#610A95"
+                    app:cardElevation="90dp">
+
+                    <ImageView
+                        android:id="@+id/becomep"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/admin3" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="110dp"
+                        android:fontFamily="@font/ramaraja"
+                        android:text="volunteer"
+                        android:textColor="@color/black"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/savefood"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_gravity="end"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="20dp"
+                    app:cardCornerRadius="30dp"
+                    android:outlineSpotShadowColor="#610A95"
+                    app:cardElevation="90dp">
+
+                    <ImageView
+                        android:id="@+id/About_us"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/about" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="110dp"
+                        android:fontFamily="@font/ramaraja"
+                        android:text="Save Food "
+                        android:textColor="@color/black"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv3"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="15dp"
+                    android:clickable="true"
+                    android:layout_marginBottom="20dp"
+                    app:cardCornerRadius="30dp"
+                    android:outlineSpotShadowColor="#610A95"
+                    app:cardElevation="90dp">
+
+                    <ImageView
+                        android:id="@+id/admin"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/admin3" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="110dp"
+                        android:fontFamily="@font/ramaraja"
+                        android:text="Admin "
+                        android:textColor="@color/black"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv6"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_gravity="end"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="20dp"
+                    app:cardCornerRadius="30dp"
+                    android:outlineSpotShadowColor="#610A95"
+                    app:cardElevation="90dp">
+
+                    <ImageView
+                        android:id="@+id/About_us"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/about" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="110dp"
+                        android:fontFamily="@font/ramaraja"
+                        android:text="About Us "
+                        android:textColor="@color/black"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+                </androidx.cardview.widget.CardView>
+            </GridLayout>
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>

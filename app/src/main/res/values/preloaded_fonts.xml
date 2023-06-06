@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/aclonica</item>
+        <item>@font/cabin_sketch</item>
+        <item>@font/mclaren</item>
+        <item>@font/potta_one</item>
+        <item>@font/ramaraja</item>
+        <item>@font/open_sans</item>
+    </array>
+</resources>

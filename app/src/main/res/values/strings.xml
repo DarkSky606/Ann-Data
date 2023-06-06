@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">AnnData</string>
+    <string name="aboutus">AnnData is a non-profit, hunger relief organisation with the mission to eliminate hunger and malnutrition.
+        Started in April 2023, our initial objective was to reduce the gap between hunger and the excess food. Initially, we used to pick up excess food from weddings, events, hotels, cafeterias, housing societies and deliver it to thousands of hungry people who live in slums or on the footpath. Everyday, we served beneficiaries which primarily include children and also others who are most in need.
+</string>
+    <string name="name">AnnData</string>
+    <string name="Slogan">Make Hunger Free INDIA</string>
+
+</resources>

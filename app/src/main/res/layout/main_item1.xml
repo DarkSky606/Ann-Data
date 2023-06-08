@@ -26,24 +26,23 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         app:cardCornerRadius="30dp"
-        android:elevation="40dp">
+        android:outlineSpotShadowColor="#F44336"
+        app:cardElevation="10dp">
         <LinearLayout
             android:id="@+id/lay1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:background="@drawable/graidient5"
+            android:background="#FFFFFF"
             android:orientation="vertical">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="108dp"
                     android:layout_height="wrap_content"
                     android:text="Name : "
-                    android:textStyle="bold"
-                    android:textSize="20sp"
-                    android:padding="2dp"
+                    android:textSize="16sp"
                     android:textColor="@color/black"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -52,19 +51,16 @@
                     android:text=""
                     android:textStyle="bold"
                     android:textSize="18sp"
-                    android:padding="2dp"
                     android:textColor="@color/black"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="108dp"
                     android:layout_height="wrap_content"
                     android:text="Food Item : "
-                    android:textStyle="bold"
-                    android:textSize="20sp"
-                    android:padding="3dp"
+                    android:textSize="16sp"
                     android:textColor="@color/black"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -73,19 +69,16 @@
                     android:text=""
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:padding="3dp"
                     android:textColor="@color/black"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="108dp"
                     android:layout_height="wrap_content"
                     android:text="Food Type : "
-                    android:textStyle="bold"
-                    android:textSize="20sp"
-                    android:padding="5dp"
+                    android:textSize="16sp"
                     android:textColor="@color/black"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -94,7 +87,6 @@
                     android:text=""
                     android:textStyle="bold"
                     android:textSize="18sp"
-                    android:padding="5dp"
                     android:textColor="@color/black"
                     tools:ignore="InvalidId" />
             </LinearLayout>
@@ -102,12 +94,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="108dp"
                     android:layout_height="wrap_content"
                     android:text="Description : "
-                    android:textStyle="bold"
-                    android:textSize="20sp"
-                    android:padding="5dp"
+                    android:textSize="16sp"
                     android:textColor="@color/black"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -115,7 +105,6 @@
                     android:text=""
                     android:id="@+id/d1"
                     android:textSize="18sp"
-                    android:padding="5dp"
                     android:textStyle="bold"
                     android:textColor="@color/black"/>
             </LinearLayout>
@@ -123,12 +112,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="108dp"
                     android:layout_height="wrap_content"
                     android:text="Cooking Date : "
-                    android:textStyle="bold"
-                    android:textSize="20sp"
-                    android:padding="5dp"
+                    android:textSize="16sp"
                     android:textColor="@color/black"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -136,7 +123,6 @@
                     android:id="@+id/ckd1"
                     android:text=""
                     android:textSize="18sp"
-                    android:padding="5dp"
                     android:textStyle="bold"
                     android:textColor="@color/black"/>
             </LinearLayout>
@@ -144,12 +130,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="108dp"
                     android:layout_height="wrap_content"
                     android:text="Cooking Time : "
-                    android:textStyle="bold"
-                    android:textSize="20sp"
-                    android:padding="5dp"
+                    android:textSize="16sp"
                     android:textColor="@color/black"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -157,7 +141,6 @@
                     android:id="@+id/ckt1"
                     android:text=""
                     android:textSize="18sp"
-                    android:padding="5dp"
                     android:textStyle="bold"
                     android:textColor="@color/black"/>
             </LinearLayout>
@@ -165,12 +148,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="108dp"
                     android:layout_height="wrap_content"
                     android:text="Address : "
-                    android:textStyle="bold"
-                    android:textSize="20sp"
-                    android:padding="5dp"
+                    android:textSize="16sp"
+
                     android:textColor="@color/black"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -179,19 +161,18 @@
                     android:text=""
                     android:textStyle="bold"
                     android:textSize="18sp"
-                    android:padding="5dp"
+
                     android:textColor="@color/black"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="108dp"
                     android:layout_height="wrap_content"
                     android:text="Contact No. :"
-                    android:textStyle="bold"
-                    android:textSize="20sp"
-                    android:padding="5dp"
+                    android:textSize="16sp"
+
                     android:textColor="@color/black"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -199,7 +180,7 @@
                     android:id="@+id/c1"
                     android:text=""
                     android:textSize="18sp"
-                    android:padding="5dp"
+
                     android:textStyle="bold"
                     android:textColor="@color/black"/>
 
@@ -212,7 +193,7 @@
             android:id="@+id/delbt"
             android:backgroundTint="#ED0622"
             android:text="Delete"
-            android:textSize="20sp"/>
+            android:textSize="16sp"/>
 
         </LinearLayout>
 

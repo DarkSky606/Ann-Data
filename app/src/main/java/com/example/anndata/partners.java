@@ -34,6 +34,31 @@ public class partners extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        tv2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url="https://website--707367860305534049317-hotel.business.site/?utm_source=gmb&utm_medium=referral";
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                startActivity(intent);
+            }
+        });
+        tv3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url="https://website--707367860305534049317-hotel.business.site/?utm_source=gmb&utm_medium=referral";
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                startActivity(intent);
+            }
+        });
+
+        tv4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url="https://website--707367860305534049317-hotel.business.site/?utm_source=gmb&utm_medium=referral";
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                startActivity(intent);
+            }
+        });
 
         i1=findViewById(R.id.i1);
         i1.setOnClickListener(new View.OnClickListener() {

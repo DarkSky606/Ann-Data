@@ -28,7 +28,7 @@ import java.util.ArrayList;
 
 public class homepage extends AppCompatActivity {
 
-    CardView cardView1, cardView2, cardView3, cardView4, cardView5, cardView6;
+    CardView cardView1, cardView2, cardView3, cardView4, cardView5, cardView6,cardView7,cardView8;
     ImageView pro,i10;
     private ImageSlider imageSlider;
     String _dp;
@@ -50,6 +50,8 @@ public class homepage extends AppCompatActivity {
         cardView4 = findViewById(R.id.cv4);
         cardView5 = findViewById(R.id.cv5);
         cardView6 = findViewById(R.id.cv6);
+        cardView7 = findViewById(R.id.bp);
+        cardView8 = findViewById(R.id.savefood);
         pro = (ImageView) findViewById(R.id.prof);
         imageSlider=findViewById(R.id.img_slider);
         i10=findViewById(R.id.i1);
@@ -64,6 +66,8 @@ public class homepage extends AppCompatActivity {
         slideModels.add(new SlideModel(R.drawable.donateimg, ScaleTypes.FIT));
         slideModels.add(new SlideModel(R.drawable.background1, ScaleTypes.FIT));
         imageSlider.setImageList(slideModels,ScaleTypes.FIT);
+        cardView7.setVisibility(View.INVISIBLE);
+        cardView8.setVisibility(View.INVISIBLE);
 
         sharedPreferences=getSharedPreferences(SHARED_PREF_NAME,MODE_PRIVATE);
         String name = sharedPreferences.getString(KEY_NAME,null);

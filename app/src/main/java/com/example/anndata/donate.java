@@ -1,6 +1,7 @@
 package com.example.anndata;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
@@ -8,6 +9,7 @@ import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.format.DateFormat;
@@ -123,15 +125,18 @@ public class donate extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         Toast.makeText(donate.this, "Donated Successfully.Thank You", Toast.LENGTH_SHORT).show();
-                        Dialog dialog = new Dialog(donate.this);
-                        dialog.setTitle("Donated Successfully. Thanks For Your Contribution.");
+                        AlertDialog dialog = new AlertDialog.Builder(donate.this).create();
+                        dialog.setTitle("Thanks for your Contribution");
+                        dialog.setButton(1,"ok",new DialogInterface.OnClickListener(){
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent intent = new Intent(donate.this,homepage.class);
+                                intent.putExtra("uname",_user);
+                                startActivity(intent);
+                                dialog.dismiss();
+                            }
+                        });
                         dialog.show();
-                        Intent intent = new Intent(donate.this,homepage.class);
-                        intent.putExtra("uname",_user);
-                        startActivity(intent);
-                        dialog.dismiss();
-                        finish();
-
                     }
 
                     @Override

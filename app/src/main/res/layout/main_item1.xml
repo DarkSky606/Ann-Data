@@ -26,8 +26,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         app:cardCornerRadius="30dp"
-        android:outlineSpotShadowColor="#F44336"
-        app:cardElevation="10dp">
+        android:outlineSpotShadowColor="#40E6E3"
+        app:cardElevation="30dp">
         <LinearLayout
             android:id="@+id/lay1"
             android:layout_width="match_parent"

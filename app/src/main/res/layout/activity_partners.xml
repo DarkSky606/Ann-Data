@@ -12,33 +12,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="25dp"
-        android:padding="10dp">
+        >
 
         <ImageView
             android:id="@+id/i1"
-            android:layout_width="62dp"
+            android:layout_width="60dp"
             android:layout_height="60dp"
             android:background="@color/trans"
-            android:paddingLeft="0dp"
+            android:layout_weight="1"
             android:src="@drawable/logo12"></ImageView>
 
         <TextView
             android:id="@+id/name"
             android:layout_width="wrap_content"
-            android:layout_height="60dp"
-            android:layout_marginStart="20dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
             android:background="@color/trans"
             android:fontFamily="@font/abril_fatface"
-            android:gravity="center_horizontal"
-            android:paddingBottom="2dp"
-            android:text="Our Partners"
+            android:gravity="left"
+            android:layout_gravity="center_vertical"
+            android:text="Our Partners "
             android:textColor="@color/black"
-            android:textSize="45sp"
+            android:textSize="35sp"
             android:textStyle="bold"
             android:visibility="visible"></TextView>
-
     </LinearLayout>
 
     <TextView
@@ -84,6 +81,7 @@
                     android:padding="10dp"
                     android:text="ABC Hotel is a very Popular Hotel In Mumbai. It is famous for its delicious foods and Drinks."
                     android:textColor="@color/black"
+                    android:textSize="16sp"
                     />
                 <TextView
                     android:layout_width="wrap_content"
@@ -92,7 +90,7 @@
                     android:layout_marginTop="180dp"
                     android:text="Learn More"
                     android:textStyle="bold"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textColor="@color/purple_700"
                     android:layout_marginLeft="220dp"/>
             </androidx.cardview.widget.CardView>
@@ -101,9 +99,6 @@
                 android:id="@+id/h2"
                 android:layout_width="350dp"
                 android:layout_height="match_parent"
-                android:layout_row="0"
-                android:layout_column="0"
-                android:clickable="true"
                 app:cardCornerRadius="30dp"
                 android:layout_margin="20dp"
                 app:cardElevation="20dp"
@@ -129,7 +124,7 @@
                     android:layout_marginTop="180dp"
                     android:text="Learn More"
                     android:textStyle="bold"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textColor="@color/purple_700"
                     android:layout_marginLeft="220dp"/>
             </androidx.cardview.widget.CardView>
@@ -161,9 +156,6 @@
                 android:id="@+id/ngo1"
                 android:layout_width="350dp"
                 android:layout_height="match_parent"
-                android:layout_row="0"
-                android:layout_column="0"
-                android:clickable="true"
                 app:cardCornerRadius="30dp"
                 android:layout_margin="20dp"
                 app:cardElevation="20dp"
@@ -173,13 +165,15 @@
                     android:layout_width="350dp"
                     android:layout_height="100dp"
                     android:src="@drawable/ngo1"/>
+
                 <TextView
                     android:layout_width="350dp"
-                    android:layout_height="70dp"
+                    android:layout_height="77dp"
                     android:layout_marginTop="100dp"
                     android:padding="10dp"
                     android:text="ABC NGO is a very Popular in Mumbai. It is famous for its good Deeds and their Hardwork. This NGO provides Food,Clothes and other essential things to poor and needy people."
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
@@ -187,7 +181,7 @@
                     android:id="@+id/lm3"
                     android:text="Learn More"
                     android:textStyle="bold"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textColor="@color/purple_700"
                     android:layout_marginLeft="220dp"/>
             </androidx.cardview.widget.CardView>
@@ -196,9 +190,6 @@
                 android:id="@+id/ngo2"
                 android:layout_width="350dp"
                 android:layout_height="match_parent"
-                android:layout_row="0"
-                android:layout_column="0"
-                android:clickable="true"
                 app:cardCornerRadius="30dp"
                 android:layout_margin="20dp"
                 app:cardElevation="20dp"
@@ -222,7 +213,7 @@
                     android:id="@+id/lm4"
                     android:text="Learn More"
                     android:textStyle="bold"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textColor="@color/purple_700"
                     android:layout_marginLeft="220dp"/>
             </androidx.cardview.widget.CardView>

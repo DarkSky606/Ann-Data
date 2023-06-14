@@ -3,14 +3,17 @@ package com.example.anndata;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
-import android.app.Dialog;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.view.View;
@@ -40,8 +43,11 @@ public class donate extends AppCompatActivity {
     RadioGroup radioGroup;
     RadioButton radioButton;
     ImageView Sedate,Setime,i1;
-    String Ftype,_dp;
+    String Ftype,_dp,name,Add;
     final Calendar mycal=Calendar.getInstance();
+    private final static int NOTIFICATION_ID=1;
+    private static final int REQ_CODE=100;
+    private final static String CHANNEL_ID="Donations";
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -72,7 +78,6 @@ public class donate extends AppCompatActivity {
 
         Intent intent = getIntent();
         String _user=intent.getStringExtra("uname");
-        //String Ddp=intent.getStringExtra("dp");
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
         Query getdp = ref.orderByChild("uname").equalTo(_user);
         getdp.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -110,12 +115,12 @@ public class donate extends AppCompatActivity {
                 if (!validateName() | !validatePhone() | !validateAdd() | !validateCkdate() | !validateCktime() | !validateFitems() ) {
                     return;
                 }
-                String name=Dname.getText().toString().trim();
+                name=Dname.getText().toString().trim();
                 String Fitem=DfItem.getText().toString().trim();
                 String Desc=Ddesc.getText().toString().trim();
                 String Cktime=Dcktime.getText().toString().trim();
                 String Ckdate=Dckdate.getText().toString().trim();
-                String Add=Dadress.getText().toString().trim();
+                Add=Dadress.getText().toString().trim();
                 String Cont=DContact.getText().toString().trim();
                 DatabaseReference reference= FirebaseDatabase.getInstance().getReference("Don");
                 DonateHelperClass donateHelperClass=new DonateHelperClass(name,Fitem,Ftype,Desc,Ckdate,Cktime,Add,Cont,_user,_dp);
@@ -124,32 +129,73 @@ public class donate extends AppCompatActivity {
                 reference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        Toast.makeText(donate.this, "Donated Successfully.Thank You", Toast.LENGTH_SHORT).show();
-                        AlertDialog dialog = new AlertDialog.Builder(donate.this).create();
-                        dialog.setTitle("Thanks for your Contribution");
-                        dialog.setButton(1,"ok",new DialogInterface.OnClickListener(){
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                Intent intent = new Intent(donate.this,homepage.class);
-                                intent.putExtra("uname",_user);
-                                startActivity(intent);
-                                dialog.dismiss();
-                            }
-                        });
+                        NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+                        Notification notification;
+
+                        Intent iNotify = new Intent(getApplicationContext(), recieve.class);
+                        iNotify.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                        PendingIntent pi = PendingIntent.getActivity(getApplicationContext(),REQ_CODE,iNotify,PendingIntent.FLAG_UPDATE_CURRENT);
+
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                            notification = new Notification.Builder(getApplicationContext())
+                                    .setSmallIcon(R.drawable.logo12)
+                                    .setContentTitle("New Donation")
+                                    .setContentText("By "+name+" from "+Add+"")
+                                    .setSubText("Check Fast")
+                                    .setContentIntent(pi)
+                                    .setChannelId(CHANNEL_ID)
+                                    .build();
+                            nm.createNotificationChannel(new NotificationChannel(CHANNEL_ID,"Donation",NotificationManager.IMPORTANCE_DEFAULT));
+                        }
+                        else {
+                            notification = new Notification.Builder(getApplicationContext())
+                                    .setSmallIcon(R.drawable.logo12)
+                                    .setContentTitle("New Donation")
+                                    .setContentText("By "+Dname+" from "+Dadress+".")
+                                    .setSubText("Check Fast")
+                                    .setContentIntent(pi)
+                                    .build();
+                        }
+                        AlertDialog.Builder builder = new AlertDialog.Builder(donate.this);
+                        builder.setTitle("Donated Successfully.")
+                                .setMessage("Thanks for your Contribution.")
+                                .setIcon(R.drawable.baseline_done_all_24)
+                                .setCancelable(false)
+                                .setPositiveButton("Go to Homepage", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        Intent intent = new Intent(donate.this,homepage.class);
+                                        intent.putExtra("uname",_user);
+                                        startActivity(intent);
+                                        dialogInterface.dismiss();
+                                        finish();
+
+                                    }
+                                })
+                                .setNegativeButton("Check My Contribution", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        Intent intent = new Intent(donate.this,contribution.class);
+                                        intent.putExtra("uname",_user);
+                                        startActivity(intent);
+                                        dialogInterface.dismiss();
+                                        finish();
+                                    }
+                                });
+                        AlertDialog dialog=builder.create();
                         dialog.show();
+                        nm.notify(NOTIFICATION_ID,notification);
                     }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-
+                        Toast.makeText(donate.this, "Databse Error", Toast.LENGTH_SHORT).show();
                     }
                 });
 
             }
         });
-
-
-
     }
 
     public void checkedBt(View view){

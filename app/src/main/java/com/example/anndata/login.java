@@ -95,7 +95,7 @@ public class login extends AppCompatActivity {
                         Dialog dialog= new Dialog(login.this);
                         dialog.setTitle("Logging In");
                         dialog.show();
-                     //   Toast.makeText(login.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(login.this, "Login Successful", Toast.LENGTH_SHORT).show();
                         Intent intent1 = new Intent(getApplicationContext(),homepage.class);
                         intent1.putExtra("uname",proUname);
                         intent1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);

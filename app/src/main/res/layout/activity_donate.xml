@@ -9,42 +9,40 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp">
+        android:padding="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="10dp">
+            android:orientation="vertical">
 
             <LinearLayout
                 android:id="@+id/l1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_marginStart="0dp"
-                android:padding="0dp">
+                >
 
                 <ImageView
                     android:id="@+id/i1"
-                    android:layout_width="62dp"
+                    android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:background="@color/trans"
-                    android:paddingLeft="0dp"
+                    android:layout_weight="1"
                     android:src="@drawable/logo12"></ImageView>
 
                 <TextView
                     android:id="@+id/name"
                     android:layout_width="wrap_content"
-                    android:layout_height="60dp"
-                    android:layout_marginStart="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
                     android:background="@color/trans"
                     android:fontFamily="@font/abril_fatface"
-                    android:gravity="center_horizontal"
-                    android:paddingBottom="2dp"
+                    android:gravity="left"
+                    android:layout_gravity="center_vertical"
                     android:text="Donate "
                     android:textColor="@color/black"
-                    android:textSize="45sp"
+                    android:textSize="35sp"
                     android:textStyle="bold"
                     android:visibility="visible"></TextView>
             </LinearLayout>
@@ -53,19 +51,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColorHint="@color/black"
-                app:boxBackgroundColor="@color/white">
+                app:boxBackgroundColor="@color/white"
+                app:hintTextColor="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/nameD"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="10dp"
                     android:hint="Name"
                     android:background="@drawable/input_bg"
                     android:singleLine="true"
                     android:textColorHint="@color/black"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold"
                     app:boxStrokeColor="@color/black"
                     app:hintEnabled="true">
@@ -79,10 +78,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:textColorHint="@color/black"
-                android:hint="Food Items"
-                app:boxStrokeColor="@color/black"
                 app:hintEnabled="true"
-
                 app:hintTextColor="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -90,53 +86,62 @@
                     android:layout_width="match_parent"
                     android:background="@drawable/input_bg"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:hint="Food Items"
+                    android:textSize="16sp"
                     android:textStyle="bold">
 
                 </com.google.android.material.textfield.TextInputEditText>
             </com.google.android.material.textfield.TextInputLayout>
-
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
                 android:text="Food Type :"
-                android:textSize="20sp"
+                android:textSize="16sp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="2"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:padding="5dp"/>
+               />
             <RadioGroup
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_weight="5"
                 android:id="@+id/radioGroup">
                 <RadioButton
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:id="@+id/veg"
                     android:text="Veg"
+                    android:layout_weight="1"
                     android:textStyle="bold"
                     android:layout_marginRight="10dp"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:onClick="checkedBt" />
                 <RadioButton
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:id="@+id/nonveg"
                     android:layout_marginRight="10dp"
                     android:text="Non-Veg"
+                    android:layout_weight="1"
                     android:textStyle="bold"
                     android:onClick="checkedBt"
-                    android:textSize="20sp"/>
+                    android:textSize="16sp"/>
                 <RadioButton
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:id="@+id/both"
+                    android:layout_weight="1"
                     android:text="Both"
                     android:textStyle="bold"
                     android:onClick="checkedBt"
-                    android:textSize="20sp"/>
+                    android:textSize="16sp"/>
             </RadioGroup>
-
+            </LinearLayout>
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -150,7 +155,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/input_bg"
                     android:hint="Description"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -173,49 +178,51 @@
                     android:inputType="date"
                     android:singleLine="true"
                     android:textColor="@color/black"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <ImageView
-                android:layout_width="100dp"
+                android:layout_width="80dp"
                 android:layout_height="57dp"
                 android:id="@+id/SeDate"
                 android:layout_marginTop="-70dp"
+                android:layout_gravity="end"
                 android:layout_marginLeft="230dp"
                 android:src="@drawable/baseline_calendar_month_24"/>
 
             <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="250dp"
-            android:layout_height="wrap_content" android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:textColorHint="@color/black"
-            app:hintAnimationEnabled="true"
-            app:hintEnabled="true">
+                android:layout_width="250dp"
+                android:layout_height="wrap_content" android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textColorHint="@color/black"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="true">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/cookTime"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/input_bg"
-                android:hint="Cooking Time"
-                android:layout_gravity="end"
-                android:singleLine="true"
-                android:inputType="time"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/cookTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input_bg"
+                    android:hint="Cooking Time"
+                    android:layout_gravity="end"
+                    android:singleLine="true"
+                    android:inputType="time"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
 
-        </com.google.android.material.textfield.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <ImageView
-                android:layout_width="100dp"
+                android:layout_width="80dp"
                 android:layout_height="57dp"
                 android:id="@+id/SeTime"
                 android:layout_marginTop="-70dp"
+                android:layout_gravity="end"
                 android:layout_marginLeft="230dp"
                 android:src="@drawable/baseline_access_time_filled_24"/>
 
@@ -233,7 +240,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/input_bg"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold">
 
                 </com.google.android.material.textfield.TextInputEditText>
@@ -255,7 +262,7 @@
                     android:layout_marginTop="10dp"
                     android:inputType="phone"
                     android:singleLine="true"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold"
                     android:maxLength="10">
 
@@ -267,7 +274,7 @@
                 android:id="@+id/submit"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_marginTop="20dp"
                 android:text="Donate" />
